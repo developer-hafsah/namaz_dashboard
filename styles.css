@@ -1,0 +1,341 @@
+/* ============================================================================
+   SALAH WRAP 2025 - Custom Stylesheet
+   Modern, Islamic-themed design with smooth animations
+   ============================================================================ */
+
+/* CSS Variables for easy customization */
+:root {
+    --primary-color: #2C5F2D;      /* Islamic green */
+    --secondary-color: #FFD700;     /* Gold accent */
+    --dark-green: #1a3a1b;
+    --light-green: #97BC62;
+    --background: #F5F5DC;          /* Beige/cream */
+    --card-bg: #FFFFFF;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(44, 95, 45, 0.3);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--background) 0%, #E8E8D0 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Decorative Islamic Pattern Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, var(--primary-color) 35px, var(--primary-color) 70px),
+        repeating-linear-gradient(-45deg, transparent, transparent 35px, var(--primary-color) 35px, var(--primary-color) 70px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '☪';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+header::after {
+    content: '☪';
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%) rotate(180deg);
+    font-size: 100px;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 900px;
+    width: 90%;
+    margin: 3rem auto;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+main > p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+/* Button Container */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-green) 100%);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    position: relative;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+/* Button Hover Effect */
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+}
+
+button:active {
+    transform: translateY(-2px);
+}
+
+/* Individual Button Colors */
+#actionButton {
+    background: linear-gradient(135deg, #2C5F2D 0%, #3A7D3E 100%);
+}
+
+#actionButton1 {
+    background: linear-gradient(135deg, #1e7e34 0%, #28a745 100%);
+}
+
+#actionButton2 {
+    background: linear-gradient(135deg, #0062cc 0%, #007bff 100%);
+}
+
+#actionButton3 {
+    background: linear-gradient(135deg, #d39e00 0%, #ffc107 100%);
+    color: var(--text-dark);
+}
+
+/* Button Icons */
+button::after {
+    content: '→';
+    margin-left: 10px;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+button:hover::after {
+    transform: translateX(5px);
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-color) 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 -4px 20px var(--shadow);
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-60%) rotate(10deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    header::before,
+    header::after {
+        font-size: 60px;
+    }
+    
+    main {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    button {
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    main > p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    header::before,
+    header::after {
+        font-size: 40px;
+    }
+    
+    button {
+        padding: 1rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Loading Animation (optional - for future use) */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Accessibility */
+button:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+/* Print Styles */
+@media print {
+    header::before,
+    header::after,
+    body::before {
+        display: none;
+    }
+    
+    button {
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        background: white;
+    }
+}
